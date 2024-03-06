@@ -1,0 +1,61 @@
+<html> 
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <body>
+        <table class="w3-table w3-striped w3-bordered w3-blue">
+            <thead> 
+                <tr> 
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>telefono</th>
+                    <th>direccion</th>
+                </tr>
+            </thead>
+            <tbody id="datostabla">
+                    
+            </tbody>
+        </table>
+
+    </body>
+
+
+<script>
+
+    const articulo = {
+        id : 23,
+        nombre : 'juan',
+        apellido : 'perez',
+        telefono: '9381567643',
+        direccion : 'Calle 25'
+    }
+    console.log(JSON.stringify(articulo))
+
+    let articulos = [
+        {id : 23,nombre : 'juan', apellido : 'perez',telefono: '9381567643',direccion : 'Calle 25'},
+        {id : 24,nombre : 'jose', apellido : 'torres',telefono: '9381789604',direccion : 'Calle 29'},
+        {id : 25,nombre : 'Emilia', apellido : 'Pereira',telefono: '9381809675',direccion : 'Calle 78'},
+        {id : 27,nombre : 'Ariadna', apellido : 'Rivera',telefono: '9388764536',direccion : 'Calle 19'},
+    ]
+    let s= ``
+    articulos.forEach(e => { //element= e
+        //clg(e.descripcion) 
+        //st=" ${e.descripcion}",
+
+        s+=`<tr>
+            <td>${e.id}</td>
+            <td>${e.nombre}</td>   
+            <td>${e.apellido}</td>
+            <td>${e.telefono}</td>
+            <td>${e.direccion}</td>
+            </tr>
+            `
+        
+    });
+    console.log(s)
+
+    let p= document.getElementById("datostabla") 
+    p.innerHTML=s
+</script>
+</html>

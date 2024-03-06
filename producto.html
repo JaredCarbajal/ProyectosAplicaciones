@@ -1,0 +1,56 @@
+<html> 
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <body>
+        <table class="w3-table w3-striped w3-bordered w3-blue">
+            <thead> 
+                <tr> 
+                    <th>IdProducto</th>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="datostabla">
+                    
+            </tbody>
+        </table>
+
+    </body>
+
+
+<script>
+
+    const articulo = {
+        idproducto : 23,
+        nombre : 'Manzana',
+        estado: 'Bueno',
+        cantidad : '30'
+    }
+    console.log(JSON.stringify(articulo))
+
+    let articulos = [
+        {idproducto : 100,nombre : 'Manzana', estado:'Bueno',cantidad : '30'},
+        {idproducto : 101,nombre : 'Pera', estado:'Bueno',cantidad : '35'},
+        {idproducto : 102,nombre : 'Mandarina', estado:'Regular',cantidad : '7'},
+    ]
+    let s= ``
+    articulos.forEach(e => { 
+
+
+        s+=`<tr>
+            <td>${e.idproducto}</td>
+            <td>${e.nombre}</td>
+            <td>${e.estado}</td>
+            <td>${e.cantidad}</td>
+            </tr>
+            `
+        
+    });
+    console.log(s)
+
+    let p= document.getElementById("datostabla") 
+    p.innerHTML=s
+</script>
+</html>

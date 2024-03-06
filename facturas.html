@@ -1,0 +1,58 @@
+<html> 
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    <body>
+        <table class="w3-table w3-striped w3-bordered w3-blue">
+            <thead> 
+                <tr> 
+                    <th>idfactura</th>
+                    <th>nombre</th>
+                    <th>correo</th>
+                    <th>cp</th>
+                </tr>
+            </thead>
+            <tbody id="datostabla">
+                    
+            </tbody>
+        </table>
+
+    </body>
+
+
+<script>
+
+    const articulo = {
+        idfactura : 300,
+        nombre : 'Juan Perez',
+        correo : 'Jp@gmail.com',
+        cp : '24135'
+        
+    }
+    console.log(JSON.stringify(articulo))
+
+    let articulos = [
+        {idfactura : 300,nombre : 'Juan Perez', correo : 'Jp@gmail.com',cp : '24135'},
+        {idfactura : 301,nombre : 'Enrique Baez', correo : 'EB@gmail.com',cp : '24136'},  
+        {idfactura : 302,nombre : 'Lionel Porras', correo : 'LP@gmail.com',cp : '24137'},    
+    ]
+    let s= ``
+    articulos.forEach(e => { //element= e
+        //clg(e.descripcion) 
+        //st=" ${e.descripcion}",
+
+        s+=`<tr>
+            <td>${e.idfactura}</td>
+            <td>${e.nombre}</td>   
+            <td>${e.correo}</td>
+            <td>${e.cp}</td>
+            </tr>
+            `
+        
+    });
+    console.log(s)
+
+    let p= document.getElementById("datostabla") 
+    p.innerHTML=s
+</script>
+</html>
